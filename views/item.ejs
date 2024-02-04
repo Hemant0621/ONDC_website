@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>product page</title>
+    <link rel="import" href="databse.js">
+</head>
+<body>
+    <style>
+
+        
+        /*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+
+body{
+    background: -o-linear-gradient(350deg, #7AABC9, #FFF);
+    background: -o-linear-gradient(293deg, #7AABC9, #FFF);
+    background: linear-gradient(157deg, #7AABC9, #FFF);
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+
+
+.dropdown {
+  display: inline-block;
+  overflow: hidden;
+  margin-left: -10%;
+  margin-right: 10%;
+}
+
+.dropbtn {
+  font-size: 17px;
+  border: none;
+  outline: none;
+  color: white;       /********************* OPINION ***********************/
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+  margin-top: 5px;
+  -webkit-transition: background-color 0.3s ease, color 0.3s ease;
+  -o-transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  -webkit-box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 2;
+  border-radius: 10px;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  -webkit-transition: background-color 0.3s ease;
+  -o-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+  border-radius: 10px;
+}
+
+.dropdown-content a:hover {
+  background-color: hsla(200, 55%, 13%, 0.485);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.search-container {
+  float: left;
+  margin-top: 8px;
+  margin-left: 10%;
+  font-size: 18px;
+  border-radius: 10px;
+  -webkit-transition: background-color 0.3s ease;
+  -o-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+}
+
+.search-bar {
+  display: inline;
+  padding: 10px;
+  font-size: 18px;
+  width: 200%;
+  margin-left: 330%;
+  border: none;
+  font-size: 16px;
+  border-radius: 15px;
+  border: 1px solid black; /* Add border color */
+  -webkit-transition: background-color 0.3s ease;
+  -o-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.search-bar:focus {
+  background-color: #fff;
+}
+
+.user-logo {
+  float: right;
+  padding: 85px 16px;
+  color: white;
+  border-radius: 10%;
+  -webkit-transition: background-color 0.3s ease;
+  -o-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+}
+
+.user-logo img{
+  border-radius: 15px;
+  width: 32px;
+  height: 32px;
+  margin-left: -65%;
+  cursor: pointer;
+  margin-top: -25%;
+}
+
+
+.user-logo {
+  position: relative;
+  top: -65px;
+  display: inline-block;
+}
+
+.menu-content {
+  display: none;
+  position: absolute;
+  left: -55px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 5;
+  border-radius: 10px;
+}
+
+.user-logo:hover .menu-content,
+.user-logo:focus-within .menu-content {
+  display: block;
+}
+
+.menu-content a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #333;
+}
+
+.dropdown-content {
+  opacity: 0;
+  transform: scale(0.8);
+  transform-origin: top;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.dropdown:hover .dropdown-content {
+  opacity: 1;
+  transform: scale(1);
+}
+
+nav {
+  background-color: hsla(200, 56%, 13%, 0.592);
+}
+
+nav a {
+  float: left;
+  display: block;
+  color:hsla(200, 56%, 13%, 0.592);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  -webkit-transition: background-color 0.3s ease, color 0.3s ease;
+  -o-transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav a:hover {
+  background-color: #ddd;
+  color: white;
+}
+
+
+
+.search-bar {
+  border-bottom: 0px solid transparent;
+  -webkit-transition: border-bottom 0.3s ease;
+  -o-transition: border-bottom 0.3s ease;
+  transition: border-bottom 0.3s ease;
+}
+
+.search-bar:focus {
+  border-bottom: 2px solid #4CAF50; /* Change to your desired color */
+}
+
+
+body {
+  background: -o-linear-gradient(45deg, #FFF, #7AABC9, hsla(200, 55%, 13%, 0.485), #7AABC9, #FFF);
+  background: linear-gradient(45deg, #FFF, #7AABC9, hsla(200, 55%, 13%, 0.485), #7AABC9, #FFF);
+  background-size: 200% 200%;
+  -webkit-transition: background 0.5s ease;
+  -o-transition: background 0.5s ease;
+  transition: background 0.5s ease; 
+  -webkit-animation: gradientAnimation 5s infinite alternate; 
+          animation: gradientAnimation 5s infinite alternate;
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@-webkit-keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+
+.product-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 20px;
+  margin-top: 5%;
+}
+
+.product-box {
+
+  position: relative;
+  -ms-flex-preferred-size: 25%;
+      flex-basis: 25%;
+  width: 50px;
+  height: 251px;
+  margin: 2%;
+  padding: 20px;
+  border: 2px solid #ddd;
+  -webkit-box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
+          box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  -webkit-transition: -webkit-transform 0.3s ease, -webkit-box-shadow 0.3s ease;
+  transition: -webkit-transform 0.3s ease, -webkit-box-shadow 0.3s ease;
+  -o-transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, -webkit-transform 0.3s ease, -webkit-box-shadow 0.3s ease;
+  cursor: pointer;
+  background-color: white;
+}
+
+.product-box:hover {
+  -webkit-transform: scale(1.05);
+      -ms-transform: scale(1.05);
+          transform: scale(1.05);
+  -webkit-box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.2);
+          box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.product-box img{
+  /* object-fit: contain; */
+  height: 100%;
+  width: 100%;
+}
+
+.product-name {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease;
+  -o-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+
+.product-box:hover .product-name {
+  opacity: 1;
+}
+
+.pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination a {
+  color:  hsla(200, 56%, 13%, 0.592);
+  margin: 0 8px;
+  text-decoration: none;
+  font-weight: bold;
+  -webkit-transition: color 0.3s ease;
+  -o-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+}
+
+.pagination a:hover {
+  color:  hsla(200, 56%, 13%, 0.592);
+}
+
+
+
+
+footer{
+  padding: 55px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: hsla(200, 56%, 13%, 0.592);
+
+}
+
+footer .top,
+footer .bottom{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+footer .top .social-links{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 15px;
+  font-size: 22px;
+}
+
+footer .separator{
+  width: 100%;
+  height: 1px;
+  background-color: hsla(200, 56%, 13%, 0.592);
+  margin: 30px 0 20px;
+}
+
+footer .bottom p{
+  font-size: 12px;
+}
+
+footer .bottom .links a{
+  font-size: 12px;
+  margin-left: 14px;
+}
+
+
+
+section {
+    display: flex;
+}
+
+section .ml-5 {
+    margin-left: 5px;
+    color: #ffffff;
+}
+
+section h1 {
+    margin-top: 5px;
+    color: #ffffff;
+}
+
+section .slider {
+    width: 56px;
+    margin-top: 5px;
+}
+
+section .ml-1 {
+    margin-left: 1px;
+    display: flex;
+}
+
+section .value {
+    color: #ffffff;
+}
+
+.filter_box{
+  width: 15%;
+
+}
+
+.filter_conatiner{
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 5%;
+}
+
+.filter{
+  color: black;
+  margin-left: 10%;
+  margin-top: 5%;
+  text-decoration: underline;
+
+}
+
+.filter_part{
+  display: flex;
+  margin-left: 20%;
+  flex-direction: column;
+  color: black;
+  font-weight: 500;
+}
+
+.filter_part h2{
+  font-size: large;
+}
+
+.radio{
+  display: flex;
+  margin-top: 2%;
+  color: black;
+}
+
+.margin{
+  background-color: black;
+  margin-left: 10%;
+  margin-top: 5%;
+  height: 2px;
+  border-radius: 40%;
+  width: 120%;
+}
+
+.filter_box h3,h4{
+  margin-left: 5%;
+}
+
+.filter_box h4{
+  margin-left: 15%;
+}
+
+.range input{
+  margin-left: 20%;
+  width: 100%;
+}
+
+.range span{
+  margin-left: 30%;
+}
+/* Job List Styles */
+#job_list {
+    width: 100%;
+    margin-left: 5%;
+    margin-top: 2%;
+    border-left: 4px solid #ffffff;
+}
+
+
+#job_list .flex {
+    margin-top: 10px;
+}
+
+#job_list .image {
+    width: 28px;
+    margin-left: 10px;
+    margin-right: 5px;
+}
+
+#job_list .about {
+    margin-left: 5px;
+}
+
+#job_list .text-white {
+    color: #ffffff;
+}
+
+#job_list .flex.text-white.mx-10 {
+    margin-left: 10px;
+}
+
+#job_list .apply {
+    margin-left: 5px;
+}
+
+.button {
+  margin-left: 40%;
+  margin-top: 20%;
+  margin-bottom: 20%;
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid #3498db;
+  border-radius: 4px;
+  color: #ffffff;
+  background-color: #3498db;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover Effect */
+.button:hover {
+  background-color: #2980b9;
+}
+
+.price{
+  width: 60%;
+  height: 5%;
+  margin-bottom: 5%;
+}
+
+</style>
+
+  <nav>
+      <div class="dropdown">
+          <button class="dropbtn">Electronics</button>
+          <div class="dropdown-content">
+              <a href="/item?Category=laptop">Laptop</a>
+              <a href="/item?Category=mobile">Mobile</a>
+              <a href="/item?Category=tv">TV</a>
+          </div>
+      </div>
+  
+      <div class="dropdown">
+          <button class="dropbtn">Fashion</button>
+          <div class="dropdown-content">
+              <a href="/item?Category=men">Men</a>
+              <a href="/item?Category=women">Women</a>
+              <a href="/item?Category=kids">Kid</a>
+          </div>
+      </div>
+  
+      <div class="dropdown">
+          <button class="dropbtn">Accessories</button>
+          <div class="dropdown-content">
+            <a href="/item?Category=watch">watch</a>
+            <a href="/item?Category=earphones">earphones</a>
+            <a href="/item?Category=ring">Ring</a>
+            <a href="/item?Category=necklace">Necklace</a>
+          </div>
+      </div>
+  
+      <div class="dropdown">
+          <button class="dropbtn">Home Decor</button>
+          <div class="dropdown-content">
+              <a href="/item?Category=curtain">Curtain</a>
+              <a href="/item?Category=blanket">Blanket</a>
+              <a href="/item?Category=decorative">Decorative</a>
+          </div>
+      </div>
+  
+      <div class="dropdown">
+          <button class="dropbtn">Kitchen</button>
+          <div class="dropdown-content">
+              <a href="/item?Category=utensils">Utensils</a>
+              <a href="/item?Category=cookware">Cookware</a>
+              <a href="/item?Category=appliances">Appliances</a>
+          </div>
+      </div>
+  
+      <div class="search-container">
+          <input type="text" placeholder="Search..." class="search-bar" id="searchBar">
+      </div>
+  
+      <div class="user-logo">
+        <img src="img/logo.jpg" alt="User Logo" width="30" height="30">
+        <div class="menu-content">
+          <a href="/account">My Account</a>
+          <a href="#order.html">My Order</a>
+          <a href="#wishlist.html">My Wishlist</a>
+          <a href="#contactus">Contact Us</a>
+          <a href="/login">Log Out</a>
+        </div>
+      </div>
+  </nav>
+
+    
+  <section >
+      <div class="filter_box">
+        <div class="filter_conatiner">
+          <h1 class="filter">Filter</h1>
+            <div class="filter_part">
+              <h2>Gender</h2>
+              <div class="radio">
+                <input type="radio" name="gender" id="male" onchange="add('Gender','male')">
+                <label for="male">Male</label>
+              </div>
+              <div class="radio">
+                <input type="radio" name="gender" id="female" onchange="add('Gender','female')">
+                <label for="male">Female</label>
+              </div>
+            </div>
+
+            <div class="margin"></div>
+
+            <div class="filter_part">
+              <h2>Discount</h2>
+              <div class="radio">
+                <input type="radio" name="Discount" id="10" onchange="add('Discount',10)">
+                <label for="male">10% and above</label>
+              </div>
+              <div class="radio">
+                <input type="radio" name="Discount" id="20" onchange="add('Discount',20)">
+                <label for="male">20% and above</label>
+              </div>
+              <div class="radio">
+                <input type="radio" name="Discount" id="30" onchange="add('Discount',40)">
+                <label for="male">40% and above</label>
+              </div>
+              <div class="radio">
+                <input type="radio" name="Discount" id="50" onchange="add('Discount',60)">
+                <label for="male">60% and above</label>
+              </div>
+              <div class="radio">
+                <input type="radio" name="Discount" id="70" onchange="add('Discount',80)">
+                <label for="male">80% and above</label>
+              </div>
+            </div>
+
+            <div class="margin"></div>
+
+            <div class="filter_part">
+              <h2>Size</h2>
+              <div class="radio">
+                <input type="radio" name="Size" id="XS" onchange="add('size','XS')">
+                <label for="male">XS</label>
+              </div>
+              <div class="radio">
+                <input type="radio" name="Size" id="S" onchange="add('size','S')">
+                <label for="male">S</label>
+              </div>
+              <div class="radio">
+                <input type="radio" name="Size" id="M" onchange="add('size','M')">
+                <label for="male">M</label>
+              </div>
+              <div class="radio">
+                <input type="radio" name="Size" id="L" onchange="add('size','L')">
+                <label for="male">L</label>
+              </div>
+              <div class="radio">
+                <input type="radio" name="Size" id="XL" onchange="add('size','XL')">
+                <label for="male">XL</label>
+              </div>
+            </div>
+
+            <div class="margin"></div>
+
+            <h3>Prices</h3>
+
+            <div class="range">
+                <h4>Maximum</h4>
+              <input type="range" min="0" max="10000" value="5000" class="slider"  step="100" onchange="price()">
+              <div>
+                  <span class="mx-auto">Value: <output class="value"></output></span>
+              </div>
+            </div>
+
+            <button class="button" onclick="refresh()">Apply</button>
+              <!-- <h1 class="text-white text-xl mt-5">Types of job</h1>
+              <div class="mt-3">
+                  <input type="checkbox" id="job1" name="vehicle1" value="Bike">
+                  <label for="vehicle1" class="text-white text-lg"> Electrician </label><br>
+                  <input type="checkbox" id="job2" name="vehicle2" value="Car">
+                  <label for="vehicle2" class="text-white text-lg"> Mehanic</label><br>
+                  <input type="checkbox" id="job3" name="vehicle3" value="Boat">
+                  <label for="vehicle3" class="text-white text-lg"> Plumber</label><br>
+                  <input type="checkbox" id="job4" name="vehicle3" value="Boat">
+                  <label for="vehicle3" class="text-white text-lg"> Household helper</label><br>
+                  <input type="checkbox" id="job5" name="vehicle3" value="Boat">
+                  <label for="vehicle3" class="text-white text-lg"> Daily wage worker</label><br>
+              </div>
+              <div class="mt-10">
+                  <button class="text-white border-white border-2 rounded-lg px-10 ml-12 hover:text-black hover:bg-white hover:weig" onclick=apply()>Apply</button>
+              </div> -->
+          </div>
+      </div>
+
+
+      <div id="job_list" >   
+        <div class="product-container">
+              
+          <%  const product = Array.from(products) %>
+          <%  if(product.length!=0){ %>
+              <%  product.forEach((data) => {%>
+                <div class="product-box">
+                    <img src="https://images.unsplash.com/photo-1523381294911-8d3cead13475?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" onclick='goto(`<%= data._id %>`)'>
+                  <!-- <div></div> -->
+                </div>
+          <%  })} %>
+          <% if(product.length==0){ %>
+                <div class="error">
+                  No Results Found
+                </div>
+          <% } %>
+      </div>
+  </section>
+
+
+    
+  <footer>
+      <div class="top">
+        <div class="social-links">
+          <a href="#"><i class='bx bxl-instagram' ></i></a>
+          <a href="#"><i class='bx bxl-linkedin' ></i></a>
+        </div>
+      </div>
+      <div class="separator"></div>
+          <div class="bottom">
+              <p>
+                  Made With ❤️ By Team DYVH
+              </p>
+          </div>
+  </footer>
+</body>
+
+
+<script>
+const searchPlaceholder = document.getElementById('searchBar');
+const placeholderTexts = ['Electronics...', 'Fashion...', 'Home Decor...', 'Kitchen...', 'Accessories...'];
+let textIndex = 0;
+let charIndex = 0;
+let typingSpeed = 100; 
+
+document.querySelector('.user-logo').addEventListener('click', function () {
+  document.querySelector('.menu-content').style.display = 'block';
+});
+
+document.addEventListener('click', function (event) {
+  if (!event.target.closest('.user-logo')) {
+    document.querySelector('.menu-content').style.display = 'none';
+  }
+});
+
+function typeText() {
+if (charIndex < placeholderTexts[textIndex].length) {
+  searchPlaceholder.setAttribute('placeholder', placeholderTexts[textIndex].substring(0, charIndex + 1));
+  charIndex++;
+  setTimeout(typeText, typingSpeed);
+} else {
+  charIndex = 0;
+  textIndex = (textIndex + 1) % placeholderTexts.length;
+  setTimeout(typeText, typingSpeed * 20); 
+}
+}
+
+const value = document.querySelectorAll(".value");
+const input = document.querySelectorAll(".slider");
+const pricevalue = document.querySelectorAll(".price");
+
+
+for (let i = 0; i < value.length; i++) {
+    value[i].textContent = input[i].value;
+    input[i].addEventListener("input", (event) => {
+    value[i].textContent = event.target.value;
+}
+)};
+
+
+function price() {
+  add('price',input[0].value);
+}
+
+
+function add(cat,value) {
+
+  var url = location.href;
+
+  if(url.search(cat)!=-1){
+    var arr=url.split('?')[1].split('&');
+    var oldvalue;
+    arr.forEach(e => {
+      if(e.split('=')[0]==cat){
+        oldvalue = e.split('=')[1]
+      }
+    });
+
+    url = url.replace(oldvalue,value)
+    console.log(oldvalue);
+    window.history.replaceState(null,null,url);
+  }
+  else{
+    window.history.replaceState(null,null,`${url}&${cat}=${value}`);
+  }
+
+
+}
+
+
+function refresh() {
+  var url = location.href;
+  location.href = url;
+}
+
+function goto(productid) {
+  window.location.href = `/product?productid=${productid}`;
+  
+}
+
+// Initial call
+typeText();
+</script>
+</html>
