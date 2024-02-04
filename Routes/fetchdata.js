@@ -1,5 +1,6 @@
 var express = require('express');
 var database = require('../model/logindata');
+var profile = require('../model/profile');
 
 var router = express.Router();
 
@@ -9,6 +10,8 @@ var product = require('../views/product');
 var ar = require('../views/ar');
 var login = require('../views/login');
 var account = require('../views/account');
+var order = require('../views/order');
+var wishlist = require('../views/wishlist');
 
 
 router.get('/',index.fetchData);
@@ -83,5 +86,27 @@ router.post('/login', async (req,res,next)=>{
 
 router.get('/account',account.fetchData);
 
+router.post('/account',async (req,res,next)=>{
+
+    profile.fetchData(async(data)=>{
+        const doc = await data.updateMany({
+            email:req.body.email
+        },
+        {
+        name:req.body.name,
+        mobile:req.body.mobile,
+        gender:req.body.gender,
+        altermobile:req.body.altermobile,
+        address:req.body.address
+        });
+        console.log(doc);
+    })
+
+      next();
+},account.fetchData)
+
+
+router.get('/order',order.fetchData)
+router.get('/wishlist',wishlist.fetchData)
 
 module.exports = router;
