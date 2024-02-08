@@ -3,14 +3,8 @@ const mongoose = require("mongoose");
 mongoose.connect("mongodb+srv://hemantkumar2335h:Hemant12@mydata.wprhwlz.mongodb.net/ondc");
 
 const profileschema = new mongoose.Schema({
-    name:String,
-    mobile:Number,
-    gender:String,
-    dob:String,
-    altermobile:Number,
     email:String,
-    password: String,
-    address:String
+    data:String
 })
 
 var con = mongoose.connection;

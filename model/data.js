@@ -2,12 +2,6 @@ const mongoose = require("mongoose");
 
 mongoose.connect("mongodb+srv://hemantkumar2335h:Hemant12@mydata.wprhwlz.mongodb.net/ondc");
 
-const reviewschema = new mongoose.Schema({
-    name:String,
-    Rating:Number,
-    comment:String
-})
-
 const garmentsSchema = new mongoose.Schema({
     productid:String,
     productname: String,
@@ -17,7 +11,10 @@ const garmentsSchema = new mongoose.Schema({
     price:Number,
     size:String,
     description:String,
-    review:[reviewschema]
+    img1:String,
+    img2:String,
+    img3:String,
+    model_path:String
 })
 
 var con = mongoose.connection;
