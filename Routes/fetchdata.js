@@ -2,6 +2,13 @@ var express = require('express');
 var database = require('../model/logindata');
 var profile = require('../model/profile');
 
+if (typeof localStorage === "undefined" || localStorage === null) {
+    var LocalStorage = require('node-localstorage').LocalStorage;
+    localStorage = new LocalStorage('./scratch');
+}
+  
+  
+
 var router = express.Router();
 
 var index= require('../views/index');
@@ -35,21 +42,28 @@ router.get('/signup',login.register);
 
 router.post('/signup', async (req,res,next)=>{
 
-    const data = {
+    const dataset = {
         name:req.body.name,
         email:req.body.email,
         password:req.body.password
     }
 
-    const uservalue = await database.find({email:[data.email]});
+    const uservalue = await database.find({email:[dataset.email]});
     if(uservalue.length > 0){
         res.exist = 'already registed';
         next();
     }
     else{
-        const userdata = await database.insertMany(data)
+        const userdata = await database.insertMany(dataset)
+        profile.fetchData(async(data)=>{
+            const doc = await data.create(
+                {
+                  email : dataset.email,
+                  data : `enter your name,${dataset.email},enter your mobile,enter your gender,enter yout DOB,enter yout altermobile, enter your address`
+                }
+              )
+        })
         res.exist = 'successfully registered';
-        console.log(userdata);
         next();
     }
         
@@ -60,16 +74,23 @@ router.get('/login',login.register);
 
 router.post('/login', async (req,res,next)=>{
 
-    const data = {
+    const dataset = {
 
         email:req.body.email,
         password:req.body.password
     }
 
-    const uservalue = await database.find({email:[data.email]});
+    const uservalue = await database.find({email:[dataset.email]});
     if(uservalue.length > 0){
-        if(uservalue[0].password == data.password){
-            res.redirect('/item?Category=men');
+        if(uservalue[0].password == dataset.password){
+            profile.fetchData(async(data)=>{
+            const doc = await data.find(
+                {
+                  email : uservalue[0].email,
+                }
+              )
+            res.redirect(`/account?${doc[0]._id.toString()}`);
+        })
         }
         else{
             res.exist = 'incorrect password';
@@ -84,7 +105,11 @@ router.post('/login', async (req,res,next)=>{
 },login.register);
 
 
-router.get('/account',account.fetchData);
+router.get('/account',(req,res,next)=>{
+    const userid = req.url.split("?")[1];
+    res.user = userid;
+    next();
+},account.fetchData);
 
 router.post('/account',async (req,res,next)=>{
 
@@ -93,16 +118,11 @@ router.post('/account',async (req,res,next)=>{
             email:req.body.email
         },
         {
-        name:req.body.name,
-        mobile:req.body.mobile,
-        gender:req.body.gender,
-        altermobile:req.body.altermobile,
-        address:req.body.address
-        });
-        console.log(doc);
+        data:`${req.body.name.toString()}` + "," + `${req.body.mobile}` + `${req.body.email}` + "," + "," + `${req.body.gender}` + "," + `${req.body.dob}` + "," + `${req.body.altermobile}` + "," + `${req.body.address.toString()}` });
+        
     })
-
-      next();
+    res.user = req.body.id;
+    next();
 },account.fetchData)
 
 
