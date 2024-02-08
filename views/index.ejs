@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apki Dukaan</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    
-  </head>
-  <body>
-    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.0.46/build/spline-viewer.js"></script>
-    
-    <style>
-        /*
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apki Dukaan</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+
+<body>
+  <script type="module" src="https://unpkg.com/@splinetool/viewer@1.0.46/build/spline-viewer.js"></script>
+
+  <style>
+    /*
 * Prefixed by https://autoprefixer.github.io
 * PostCSS: v8.4.14,
 * Autoprefixer: v10.4.7
 * Browsers: last 4 version
 */
 
-/*
+    /*
 * Prefixed by https://autoprefixer.github.io
 * PostCSS: v8.4.14,
 * Autoprefixer: v10.4.7
@@ -28,742 +30,804 @@
 */
 
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
-html {
-  scroll-behavior: smooth;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-body{
-    background: -o-linear-gradient(350deg, #7AABC9, #FFF);
-    background: -o-linear-gradient(293deg, #7AABC9, #FFF);
-    background: linear-gradient(157deg, #7AABC9, #FFF);
-    font-family: 'Montserrat', sans-serif;
-    margin: 0;
-    scroll-behavior: smooth;
-}
-
-
-
-nav {
-  background-color: hsla(200, 56%, 13%, 0.592);
-}
-
-nav a {
-  float: left;
-  display: block;
-  color:hsla(200, 56%, 13%, 0.592);
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  -webkit-transition: background-color 0.3s ease, color 0.3s ease;
-  -o-transition: background-color 0.3s ease, color 0.3s ease;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-nav a:hover {
-  background-color: #ddd;
-  color: white;
-}
-
-.dropdown {
-  display: inline-block;
-  overflow: hidden;
-  margin-left: -10%;
-  margin-right: 10%;
-}
-
-.dropbtn {
-  font-size: 17px;
-  border: none;
-  outline: none;
-  color: white;       /********************* OPINION ***********************/
-  padding: 14px 16px;
-  background-color: inherit;
-  font-family: inherit;
-  margin: 0;
-  margin-top: 5px;
-  -webkit-transition: background-color 0.3s ease, color 0.3s ease;
-  -o-transition: background-color 0.3s ease, color 0.3s ease;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  -webkit-box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-  border-radius: 10px;
-}
-
-.dropdown-content a {
-  float: none;
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-  -webkit-transition: background-color 0.3s ease;
-  -o-transition: background-color 0.3s ease;
-  transition: background-color 0.3s ease;
-  border-radius: 10px;
-}
-
-.dropdown-content a:hover {
-  background-color: hsla(200, 55%, 13%, 0.485);
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-.search-container {
-  float: left;
-  margin-top: 8px;
-  margin-left: 10%;
-  font-size: 18px;
-  border-radius: 10px;
-  -webkit-transition: background-color 0.3s ease;
-  -o-transition: background-color 0.3s ease;
-  transition: background-color 0.3s ease;
-}
-
-.search-bar {
-  display: inline;
-  padding: 10px;
-  font-size: 18px;
-  width: 200%;
-  margin-left: 330%;
-  border: none;
-  font-size: 16px;
-  border-radius: 15px;
-  border: 1px solid black; /* Add border color */
-  -webkit-transition: background-color 0.3s ease;
-  -o-transition: background-color 0.3s ease;
-  transition: background-color 0.3s ease;
-  font-family: 'Montserrat', sans-serif;
-}
-
-.search-bar:focus {
-  background-color: #fff;
-}
-
-.user-logo {
-  float: right;
-  padding: 85px 16px;
-  color: white;
-  border-radius: 10%;
-  -webkit-transition: background-color 0.3s ease;
-  -o-transition: background-color 0.3s ease;
-  transition: background-color 0.3s ease;
-}
-
-.user-logo img{
-  border-radius: 15px;
-  width: 32px;
-  height: 32px;
-  margin-left: -65%;
-  cursor: pointer;
-  margin-top: -25%;
-}
-
-
-.user-logo {
-  position: relative;
-  top: -65px;
-  display: inline-block;
-}
-
-.menu-content {
-  display: none;
-  position: absolute;
-  left: -55px;
-  background-color: #fff;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-  border-radius: 10px;
-}
-
-.user-logo:hover .menu-content,
-.user-logo:focus-within .menu-content {
-  display: block;
-}
-
-.menu-content a {
-  display: block;
-  padding: 10px;
-  text-decoration: none;
-  color: #333;
-}
-
-
-.dropdown-content {
-  opacity: 0;
-  transform: scale(0.8);
-  transform-origin: top;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.dropdown:hover .dropdown-content {
-  opacity: 1;
-  transform: scale(1);
-}
-
-.search-bar {
-  border-bottom: 0px solid transparent;
-  transition: border-bottom 0.3s ease;
-}
-
-.search-bar:focus {
-  border-bottom: 2px solid #4CAF50; /* Change to your desired color */
-}
-
-
-body {
-  background: linear-gradient(45deg, #FFF, #7AABC9, hsla(200, 55%, 13%, 0.485), #7AABC9, #FFF);
-  background-size: 200% 200%;
-  transition: background 0.5s ease; /* Add transition property */
-  animation: gradientAnimation 5s infinite alternate;
-}
-
-@keyframes gradientAnimation {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 100% 50%;
-  }
-}
+    body {
+      background: -o-linear-gradient(350deg, #7AABC9, #FFF);
+      background: -o-linear-gradient(293deg, #7AABC9, #FFF);
+      background: linear-gradient(157deg, #7AABC9, #FFF);
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      scroll-behavior: smooth;
+    }
 
 
 
-.grid-container {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 15px 1fr;
-  grid-template-columns: repeat(2, 1fr);
-  width: 500px;
-  height: 325px;
+    nav {
+      background-color: hsla(200, 56%, 13%, 0.592);
+      height: 70px;
+    }
 
-  margin: -17%;
-  margin-top: -50%;
-  margin-left: 67%;
-}
+    nav a {
+      float: left;
+      display: block;
+      color: hsla(200, 56%, 13%, 0.592);
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      -webkit-transition: background-color 0.3s ease, color 0.3s ease;
+      -o-transition: background-color 0.3s ease, color 0.3s ease;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
 
+    nav a:hover {
+      background-color: #ddd;
+      color: white;
+    }
 
-.grid-item {
-  position: relative; 
-  background-color: #fff;
-  padding: 20px;
-  top: -45px;
-  border-radius: 6px;
-  -webkit-box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  font-size: 18px;
-  font-family: 'Montserrat', sans-serif;
-  background: #FFF;/*******change the color*********/
-  cursor: pointer;
-}
+    .dropdown {
+      display: inline-block;
+      overflow: hidden;
+      margin-left: -10%;
+      margin-right: 10%;
 
-.grid-container .grid-item{
-  margin: -9px;
-  width: 32%;
-  margin-left: 7px;
-  grid-template-columns: repeat(2, 1fr);
-}
+    }
 
 
-.grid-item:hover {
-  -webkit-transform: scale(1.05);
+    .weblogo img {
+      padding-top: 1%;
+      padding-left: 2%;
+      margin-bottom: -3%;
+      cursor: pointer;
+    }
+
+    .dropbtn {
+      font-size: 17px;
+      border: none;
+      outline: none;
+      color: white;
+      padding-right: 25px;
+      background-color: inherit;
+      font-family: inherit;
+      margin: 0;
+      margin-top: 5px;
+      -webkit-transition: background-color 0.3s ease, color 0.3s ease;
+      -o-transition: background-color 0.3s ease, color 0.3s ease;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      border-radius: 10px;
+    }
+
+    .dropdown-content a {
+      float: none;
+      color: black;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+      -webkit-transition: background-color 0.3s ease;
+      -o-transition: background-color 0.3s ease;
+      transition: background-color 0.3s ease;
+      border-radius: 10px;
+    }
+
+    .dropdown-content a:hover {
+      background-color: hsla(200, 55%, 13%, 0.485);
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .search-container {
+      float: left;
+      margin-top: -2.2%;
+      margin-left: 7%;
+      font-size: 18px;
+      border-radius: 10px;
+      -webkit-transition: background-color 0.3s ease;
+      -o-transition: background-color 0.3s ease;
+      transition: background-color 0.3s ease;
+    }
+
+
+
+    .search-container img {
+      position: relative;
+      cursor: pointer;
+      margin-left: 10px;
+      height: 25px;
+      width: 25px;
+    }
+
+    .search-img {
+      display: flex;
+      margin-top: -15%;
+      margin-left: 492%;
+    }
+
+    .search-bar {
+      display: inline;
+      padding: 10px;
+      font-size: 18px;
+      width: 200%;
+      margin-left: 330%;
+      border: none;
+      font-size: 16px;
+      border-radius: 15px;
+      border: 1px solid black;
+      -webkit-transition: background-color 0.3s ease;
+      -o-transition: background-color 0.3s ease;
+      transition: background-color 0.3s ease;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .search-bar:focus {
+      background-color: #fff;
+    }
+
+    .user-logo {
+      float: right;
+      padding: 85px 16px;
+      color: white;
+      border-radius: 10%;
+      -webkit-transition: background-color 0.3s ease;
+      -o-transition: background-color 0.3s ease;
+      transition: background-color 0.3s ease;
+    }
+
+    .user-logo {
+      position: relative;
+      top: -145px;
+      display: inline-block;
+    }
+
+    .user-logo img {
+      border-radius: 15px;
+      width: 40px;
+      height: 40px;
+      margin-left: -65%;
+      cursor: pointer;
+      margin-top: -60px;
+    }
+
+    .menu-content {
+      display: none;
+      position: absolute;
+      left: -55px;
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      border-radius: 10px;
+    }
+
+    .user-logo:hover .menu-content,
+    .user-logo:focus-within .menu-content {
+      display: block;
+    }
+
+    .menu-content a {
+      display: block;
+      padding: 10px;
+      text-decoration: none;
+      color: #333;
+    }
+
+
+    .dropdown-content {
+      opacity: 0;
+      transform: scale(0.8);
+      transform-origin: top;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .dropdown:hover .dropdown-content {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .search-bar {
+      border-bottom: 0px solid transparent;
+      transition: border-bottom 0.3s ease;
+    }
+
+    .search-bar:focus {
+      border-bottom: 2px solid #4CAF50;
+      /* Change to your desired color */
+    }
+
+
+    body {
+      background: linear-gradient(45deg, #FFF, #7AABC9, hsla(200, 55%, 13%, 0.485), #7AABC9, #FFF);
+      background-size: 200% 200%;
+      transition: background 0.5s ease;
+      /* Add transition property */
+      animation: gradientAnimation 5s infinite alternate;
+    }
+
+    @keyframes gradientAnimation {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      100% {
+        background-position: 100% 50%;
+      }
+    }
+
+
+
+    .grid-container {
+      display: -ms-grid;
+      display: grid;
+      -ms-grid-columns: 1fr 15px 1fr;
+      grid-template-columns: repeat(2, 1fr);
+      width: 500px;
+      height: 325px;
+      margin: -17%;
+      margin-top: -800px;
+      margin-left: 67%;
+    }
+
+    .grid-container h3 {
+      position: relative;
+      bottom: 40%;
+      /* margin-bottom: 20%; */
+    }
+
+    .grid-item {
+      position: relative;
+      background-color: #fff;
+      padding: 20px;
+      top: -20px;
+      border-radius: 6px;
+      -webkit-box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      font-size: 18px;
+      font-family: 'Montserrat', sans-serif;
+      background: #FFF;
+      /*******change the color*********/
+      cursor: pointer;
+    }
+
+    .grid-container .grid-item {
+      margin: -9px;
+      width: 32%;
+      margin-left: 7px;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    .grid-item:hover {
+      -webkit-transform: scale(1.05);
       -ms-transform: scale(1.05);
-          transform: scale(1.05);
-  -webkit-box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.2);
-          box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.2); 
-}
+      transform: scale(1.05);
+      -webkit-box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.2);
+      box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.2);
+    }
 
-.grid-container .grid{
-  margin-top: 15px;
-  gap: 34px;
-  position: absolute;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+    .grid-container .grid {
+      margin-top: -50px;
+      gap: 34px;
+      position: absolute;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
 
-}
-
-
-.grid-container .grid .grid-item{
-  margin-top: -3%;
-  background-color: #deebee;
-  width: 207px;
-  height: 150px;
-  border-radius: 10px;
-  padding: 20px;
-  border-bottom: 4px solid transparent;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  grid-template-columns: repeat(2, 1fr);
-}
-
-.grid-container .grid .grid-item:hover{
-  border-color: hsl(201, 100%, 22%);
-}
+    }
 
 
-@media (max-width: 768px) {
-  .grid-container {
-      -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
-  }
-}
+    .grid-container .grid .grid-item {
+      margin-top: -3%;
+      background-color: #deebee;
+      width: 207px;
+      height: 150px;
+      border-radius: 10px;
+      padding: 20px;
+      border-bottom: 4px solid transparent;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-container .grid .grid-item:hover {
+      border-color: hsl(201, 100%, 22%);
+    }
+
+
+    @media (max-width: 768px) {
+      .grid-container {
+        -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+      }
+    }
 
 
 
-.ad{
-  width: 92%;
-height: 50%;
--webkit-box-pack: right;
-    -ms-flex-pack: right;
-        justify-content: right;
-padding: 25%;
-margin-top: -20%;
-border-radius: 20px;
-margin-left: -22%;
-}
+    .ad {
+      width: 92%;
+      height: 50%;
+      -webkit-box-pack: right;
+      -ms-flex-pack: right;
+      justify-content: right;
+      padding: 25%;
+      margin-top: -20%;
+      border-radius: 20px;
+      margin-left: -22%;
+    }
 
-.ad img{
-  width: 125%;
-  height: 350px;
-  margin-right: 46%;
-}
+    .ad img {
+      width: 125%;
+      height: 400px;
+      margin-right: 46%;
+    }
 
-.category-grid {
-  width: 250px;
-  margin: 100px auto;
-  text-align: center;
-  margin-top: 18%; 
-  margin-left: 23%;
-}
+    .category-grid {
+      width: 250px;
+      margin: 100px auto;
+      text-align: center;
+      margin-top: 18%;
+      margin-left: 26%;
+    }
 
 
-.category-grid h3{
-  margin-left: -98%;
-}
+    .category-grid h3 {
+      margin-left: -98%;
+    }
 
-h3{
-  font-size: 24px;
-  font-family: 'Montserrat', sans-serif;
-}
+    h3 {
+      font-size: 24px;
+      font-family: 'Montserrat', sans-serif;
+    }
 
-.grid-row {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-pack: center;
+    .grid-row {
+      display: -webkit-inline-box;
+      display: -ms-inline-flexbox;
+      display: inline-flex;
+      -webkit-box-pack: center;
       -ms-flex-pack: center;
-          justify-content: center;
-  gap: 3%;
-  margin-top: 10px;
-  border-radius: 10px;
-  margin: 12px;
+      justify-content: center;
+      gap: 3%;
+      margin-top: 10px;
+      border-radius: 10px;
+      margin: 12px;
 
-}
+    }
 
-.gridItem {
-  margin-top: 40px;
-  margin-bottom: -33px;
-  width: 250px;
-  height: 200px;
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  font-size: 18px;
-  font-family: 'Montserrat', sans-serif;
-  -webkit-transition: -webkit-transform 0.3s ease-out, -webkit-box-shadow 0.3s ease-out;
-  transition: -webkit-transform 0.3s ease-out, -webkit-box-shadow 0.3s ease-out;
-  -o-transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
-  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
-  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out, -webkit-transform 0.3s ease-out, -webkit-box-shadow 0.3s ease-out;
-}
+    .gridItem {
+      margin-top: 40px;
+      margin-bottom: -33px;
+      width: 250px;
+      height: 200px;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      font-size: 18px;
+      font-family: 'Montserrat', sans-serif;
+      -webkit-transition: -webkit-transform 0.3s ease-out, -webkit-box-shadow 0.3s ease-out;
+      transition: -webkit-transform 0.3s ease-out, -webkit-box-shadow 0.3s ease-out;
+      -o-transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+      transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+      transition: transform 0.3s ease-out, box-shadow 0.3s ease-out, -webkit-transform 0.3s ease-out, -webkit-box-shadow 0.3s ease-out;
+    }
 
-.gridItem:hover {
-  -webkit-transform: scale(1.05);
+    .gridItem:hover {
+      -webkit-transform: scale(1.05);
       -ms-transform: scale(1.05);
-          transform: scale(1.05);
-  -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-}
+      transform: scale(1.05);
+      -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
 
-.category-grid .grid-row{
-  display: flex;
-  margin-top: 1px;
-  gap: 14px;
-  margin-left: -105%;
-}
+    .category-grid .grid-row {
+      display: flex;
+      margin-top: 1px;
+      gap: 14px;
+      margin-left: -105%;
+    }
 
-.category-grid .grid-row .gridItem{
-  background-color: #deebee;
-  width: 100%;
-  border-radius: 10px;
-  padding: 52px;
-  border-bottom: 4px solid transparent;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-
-.category-grid .grid-row .gridItem:hover{
-  border-color: hsl(201, 100%, 22%);
-}
+    .category-grid .grid-row .gridItem {
+      background-color: #deebee;
+      width: 100%;
+      border-radius: 10px;
+      padding: 52px;
+      border-bottom: 4px solid transparent;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
 
 
-
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  list-style-type: none;
-  text-decoration: none;
-}
+    .category-grid .grid-row .gridItem:hover {
+      border-color: hsl(201, 100%, 22%);
+    }
 
 
-:root {
-  --primary: #ec994b;
-  --white: #ffffff;
-  --bg: #f5f5f5;
-}
-.containerPro {
-  max-width: 124rem;
-  padding: 0 1rem;
-  margin: 58px auto;
-  margin-top: -50px ;
-}
 
-.text-center {
-  text-align: center;
-}
-
-.section-heading {
-  font-size: 3rem;
-  color: hsla(200, 55%, 13%, 0.485);
-  padding: 2rem 0;
-}
-
-#tranding {
-  padding: 4rem 0;
-}
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      list-style-type: none;
+      text-decoration: none;
+    }
 
 
-#tranding .tranding-slider {
-  height: 52rem;
-  padding: 2rem 0;
-  position: relative;
-}
+    :root {
+      --primary: #ec994b;
+      --white: #ffffff;
+      --bg: #f5f5f5;
+    }
 
-@media (max-width:500px) {
-  #tranding .tranding-slider {
-    height: 45rem;
-  }
-}
+    .containerPro {
+      max-width: 124rem;
+      padding: 0 1rem;
+      margin: 58px auto;
+      margin-top: -50px;
+    }
 
-.tranding-slide {
-  width: 18rem;
-  height: 22rem;
-  position: relative;
-}
+    .text-center {
+      text-align: center;
+    }
 
-@media (max-width:500px) {
-  .tranding-slide {
-    width: 28rem !important;
-    height: 36rem !important;
-  }
-  .tranding-slide .tranding-slide-img img {
-    width: 28rem !important;
-    height: 36rem !important;
-  }
-}
+    .section-heading {
+      font-size: 3rem;
+      color: hsla(200, 55%, 13%, 0.485);
+      padding: 2rem 0;
+    }
 
-.tranding-slide .tranding-slide-img img {
-  width: 17rem;
-  height: 22rem;
-  border-radius: 2rem;
-}
+    #tranding {
+      padding: 4rem 0;
+    }
 
-.tranding-slide .tranding-slide-content {
-  position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-}
 
-.tranding-slide-content .food-price {
-  position: absolute;
-  top: -7rem;
-  right: 2rem;
-  color: var(--white);
-}
+    #tranding .tranding-slider {
+      height: 52rem;
+      padding: 2rem 0;
+      position: relative;
+    }
 
-.tranding-slide-content .tranding-slide-content-bottom {
-  position: absolute;
-  bottom: -8rem;
-  left: 0rem;
-  color: var(--white);
-}
+    @media (max-width:500px) {
+      #tranding .tranding-slider {
+        height: 45rem;
+      }
+    }
 
-.food-rating {
-  padding-top: 1rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 1rem;
-}
+    .tranding-slide {
+      width: 18rem;
+      height: 22rem;
+      position: relative;
+    }
 
-.rating ion-icon {
-  color: var(--primary);
-}
+    @media (max-width:500px) {
+      .tranding-slide {
+        width: 28rem !important;
+        height: 36rem !important;
+      }
 
-.swiper-slide-shadow-left,
-.swiper-slide-shadow-right {
-  display: none;
-}
+      .tranding-slide .tranding-slide-img img {
+        width: 28rem !important;
+        height: 36rem !important;
+      }
+    }
 
-.tranding-slider-control {
-  position: relative;
-  margin-top: -10%;
-  margin-left: -2%;
-  bottom: 5rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
+    .tranding-slide .tranding-slide-img img {
+      width: 17rem;
+      height: 22rem;
+      border-radius: 2rem;
+    }
+
+    .tranding-slide .tranding-slide-content {
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+    }
+
+    .tranding-slide-content .food-price {
+      position: absolute;
+      top: -7rem;
+      right: 2rem;
+      color: var(--white);
+    }
+
+    .tranding-slide-content .tranding-slide-content-bottom {
+      position: absolute;
+      bottom: -8rem;
+      left: 0rem;
+      color: var(--white);
+    }
+
+    .food-rating {
+      padding-top: 1rem;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      gap: 1rem;
+    }
+
+    .rating ion-icon {
+      color: var(--primary);
+    }
+
+    .swiper-slide-shadow-left,
+    .swiper-slide-shadow-right {
+      display: none;
+    }
+
+    .tranding-slider-control {
+      position: relative;
+      margin-top: -10%;
+      margin-left: -2%;
+      bottom: 5rem;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
       -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
+      align-items: center;
+      -webkit-box-pack: center;
       -ms-flex-pack: center;
-          justify-content: center;
-}
+      justify-content: center;
+    }
 
-.tranding-slider-control .swiper-button-next {
-  left: 59% !important;
-  -webkit-transform: translateX(-58%) !important;
+    .tranding-slider-control .swiper-button-next {
+      left: 59% !important;
+      -webkit-transform: translateX(-58%) !important;
       -ms-transform: translateX(-58%) !important;
-          transform: translateX(-58%) !important;
-}
+      transform: translateX(-58%) !important;
+    }
 
-@media (max-width:990px) {
-  .tranding-slider-control .swiper-button-next {
-    left: 70% !important;
-    -webkit-transform: translateX(-70%) !important;
+    @media (max-width:990px) {
+      .tranding-slider-control .swiper-button-next {
+        left: 70% !important;
+        -webkit-transform: translateX(-70%) !important;
         -ms-transform: translateX(-70%) !important;
-            transform: translateX(-70%) !important;
-  }
-}
+        transform: translateX(-70%) !important;
+      }
+    }
 
-@media (max-width:450px) {
-  .tranding-slider-control .swiper-button-next {
-    left: 80% !important;
-    -webkit-transform: translateX(-80%) !important;
+    @media (max-width:450px) {
+      .tranding-slider-control .swiper-button-next {
+        left: 80% !important;
+        -webkit-transform: translateX(-80%) !important;
         -ms-transform: translateX(-80%) !important;
-            transform: translateX(-80%) !important;
-  }
-}
+        transform: translateX(-80%) !important;
+      }
+    }
 
-@media (max-width:990px) {
-  .tranding-slider-control .swiper-button-prev {
-    left: 30% !important;
-    -webkit-transform: translateX(-30%) !important;
+    @media (max-width:990px) {
+      .tranding-slider-control .swiper-button-prev {
+        left: 30% !important;
+        -webkit-transform: translateX(-30%) !important;
         -ms-transform: translateX(-30%) !important;
-            transform: translateX(-30%) !important;
-  }
-}
+        transform: translateX(-30%) !important;
+      }
+    }
 
-@media (max-width:450px) {
-  .tranding-slider-control .swiper-button-prev {
-    left: 20% !important;
-    -webkit-transform: translateX(-20%) !important;
+    @media (max-width:450px) {
+      .tranding-slider-control .swiper-button-prev {
+        left: 20% !important;
+        -webkit-transform: translateX(-20%) !important;
         -ms-transform: translateX(-20%) !important;
-            transform: translateX(-20%) !important;
-  }
-}
+        transform: translateX(-20%) !important;
+      }
+    }
 
-.tranding-slider-control .slider-arrow {
-  background: var(--white);
-  width: 3.5rem;
-  height: 3.5rem;
-  border-radius: 50%;
-  left: 41%;
-  -webkit-transform: translateX(-42%);
+    .tranding-slider-control .slider-arrow {
+      background: var(--white);
+      width: 3.5rem;
+      height: 3.5rem;
+      border-radius: 50%;
+      left: 41%;
+      -webkit-transform: translateX(-42%);
       -ms-transform: translateX(-42%);
-          transform: translateX(-42%);
-  -webkit-filter: drop-shadow(0px 8px 24px rgba(18, 28, 53, 0.1));
-          filter: drop-shadow(0px 8px 24px rgba(18, 28, 53, 0.1));
-}
+      transform: translateX(-42%);
+      -webkit-filter: drop-shadow(0px 8px 24px rgba(18, 28, 53, 0.1));
+      filter: drop-shadow(0px 8px 24px rgba(18, 28, 53, 0.1));
+    }
 
-.tranding-slider-control .slider-arrow ion-icon {
-  font-size: 2rem;
-  color: #222224;
-}
+    .tranding-slider-control .slider-arrow ion-icon {
+      font-size: 2rem;
+      color: #222224;
+    }
 
-.tranding-slider-control .slider-arrow::after {
-  content: '';
-}
+    .tranding-slider-control .slider-arrow::after {
+      content: '';
+    }
 
-.tranding-slider-control .swiper-pagination {
-  position: relative;
-  width: 15rem;
-  bottom: 1rem;
-}
+    .tranding-slider-control .swiper-pagination {
+      position: relative;
+      width: 15rem;
+      bottom: 1rem;
+    }
 
-.tranding-slider-control .swiper-pagination .swiper-pagination-bullet {
-  -webkit-filter: drop-shadow(0px 8px 24px rgba(18, 28, 53, 0.1));
-          filter: drop-shadow(0px 8px 24px rgba(18, 28, 53, 0.1));
-}
+    .tranding-slider-control .swiper-pagination .swiper-pagination-bullet {
+      -webkit-filter: drop-shadow(0px 8px 24px rgba(18, 28, 53, 0.1));
+      filter: drop-shadow(0px 8px 24px rgba(18, 28, 53, 0.1));
+    }
 
-.tranding-slider-control .swiper-pagination .swiper-pagination-bullet-active {
-  background: var(--primary);
-}
+    .tranding-slider-control .swiper-pagination .swiper-pagination-bullet-active {
+      background: var(--primary);
+    }
 
 
 
-/* Add the following CSS to your existing styles */
+    /* Add the following CSS to your existing styles */
 
-.tranding-slide {
-  -webkit-transition: -webkit-transform 0.3s ease-in-out;
-  transition: -webkit-transform 0.3s ease-in-out;
-  -o-transition: transform 0.3s ease-in-out;
-  transition: transform 0.3s ease-in-out;
-  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
-}
+    .tranding-slide {
+      -webkit-transition: -webkit-transform 0.3s ease-in-out;
+      transition: -webkit-transform 0.3s ease-in-out;
+      -o-transition: transform 0.3s ease-in-out;
+      transition: transform 0.3s ease-in-out;
+      transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+    }
 
-.tranding-slide:hover {
-  -webkit-transform: scale(1.05);
+    .tranding-slide:hover {
+      -webkit-transform: scale(1.05);
       -ms-transform: scale(1.05);
-          transform: scale(1.05);
-}
+      transform: scale(1.05);
+    }
 
-.tranding-slide:hover .tranding-slide-content {
-  -webkit-transform: translateY(-10px);
+    .tranding-slide:hover .tranding-slide-content {
+      -webkit-transform: translateY(-10px);
       -ms-transform: translateY(-10px);
-          transform: translateY(-10px);
-}
+      transform: translateY(-10px);
+    }
 
-.tranding-slide .tranding-slide-content {
-  -webkit-transition: -webkit-transform 0.3s ease-in-out;
-  transition: -webkit-transform 0.3s ease-in-out;
-  -o-transition: transform 0.3s ease-in-out;
-  transition: transform 0.3s ease-in-out;
-  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
-}
-
-
+    .tranding-slide .tranding-slide-content {
+      -webkit-transition: -webkit-transform 0.3s ease-in-out;
+      transition: -webkit-transform 0.3s ease-in-out;
+      -o-transition: transform 0.3s ease-in-out;
+      transition: transform 0.3s ease-in-out;
+      transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+    }
 
 
-footer{
-  padding: 55px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
+    .wishlist p {
+      margin-left: -265%;
+      margin-top: 120%;
+      font-weight: bold;
+    }
+
+    .wishlist img {
+      width: 2%;
+      margin-left: 85%;
+      margin-top: -2%;
+      margin-bottom: 28px;
+      cursor: pointer;
+    }
+
+    .cart img {
+      cursor: pointer;
+      width: 2%;
+      height: 1%;
+      margin-left: 90%;
+      margin-top: -7%;
+      margin-bottom: 48px;
+    }
+
+    footer {
+      padding: 55px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
       -ms-flex-direction: column;
-          flex-direction: column;
-  background-color: hsla(200, 56%, 13%, 0.592);
-  margin-top: -12%;
-}
+      flex-direction: column;
+      background-color: hsla(200, 56%, 13%, 0.592);
+      margin-top: -12%;
+    }
 
-footer .top,
-footer .bottom{
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
+    footer .top,
+    footer .bottom {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
       -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
+      align-items: center;
+      -webkit-box-pack: center;
       -ms-flex-pack: center;
-          justify-content: center;
-}
+      justify-content: center;
+    }
 
-footer .top .social-links{
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
+    footer .top .social-links {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
       -ms-flex-align: center;
-          align-items: center;
-  gap: 15px;
-  font-size: 22px;
-}
+      align-items: center;
+      gap: 15px;
+      font-size: 22px;
+    }
 
-footer .separator{
-  width: 100%;
-  height: 1px;
-  background-color: hsla(200, 56%, 13%, 0.592);
-  margin: 30px 0 20px;
-}
+    footer .separator {
+      width: 100%;
+      height: 1px;
+      background-color: hsla(200, 56%, 13%, 0.592);
+      margin: 30px 0 20px;
+    }
 
-footer .bottom p{
-  font-size: 12px;
-}
+    footer .bottom p {
+      font-size: 12px;
+    }
 
-footer .bottom .links a{
-  font-size: 12px;
-  margin-left: 14px;
-}
+    footer .bottom .links a {
+      font-size: 12px;
+      margin-left: 14px;
+    }
 
-.bot{
-  position: fixed;
-  z-index: 10;
-  left: 73%;
-  bottom: 2%;
-}
-
-
-#robot{
-  display: block;
-  position: relative;
-  cursor: pointer;
-  left: 140%;
-}
-
-#bot{
-  display: none;
-}
-
-#cross{
-  position: absolute;
-  display: none;
-  height: 5%;
-  width: 5%;
-  top: 2%;
-  right: 2%;
-  cursor: pointer;
-}
-
-</style>
+    .bot {
+      position: fixed;
+      z-index: 10;
+      left: 76%;
+      bottom: 2%;
+    }
 
 
-<div class="bot">    
-  <iframe id="bot" src='https://webchat.botframework.com/embed/Sahayak-chat?s=IkYilmxM6Ow.qBw0ijh1j03Ys_1TINE0Oeh2qG4pgzw5h7azjS1qy2M'  style='min-width: 400px; width: 40%; min-height: 450px;'></iframe>
-  <img id="cross" src="img/delete-button.png" alt="" onclick="robot()">
-  <div onclick="robot()" id="robot">
-    <iframe src="https://giphy.com/embed/OiM3v83WSCqQUCPL84" width="170" height="170" frameBorder="0" class="giphy-embed" allowFullScreen  style="pointer-events: none;"></iframe>
+    #robot {
+      display: block;
+      position: relative;
+      cursor: pointer;
+      left: 140%;
+    }
+
+    #bot {
+      display: none;
+    }
+
+    #cross {
+      position: absolute;
+      display: none;
+      height: 5%;
+      width: 5%;
+      top: 2%;
+      right: 2%;
+      cursor: pointer;
+    }
+  </style>
+
+
+  <div class="bot">
+    <iframe id="bot"
+      src='https://webchat.botframework.com/embed/Sahayak-chat?s=IkYilmxM6Ow.qBw0ijh1j03Ys_1TINE0Oeh2qG4pgzw5h7azjS1qy2M'
+      style='min-width: 400px; width: 40%; min-height: 450px;'></iframe>
+    <img id="cross" src="/img/delete-button.png" alt="" onclick="robot()">
+    <div onclick="robot()" id="robot">
+      <iframe src="https://giphy.com/embed/OiM3v83WSCqQUCPL84" width="170" height="170" frameBorder="0"
+        class="giphy-embed" allowFullScreen style="pointer-events: none;"></iframe>
+    </div>
   </div>
-</div>
 
-<nav>
-  <div class="dropdown">
-    <button class="dropbtn">Electronics</button>
+  <nav>
+    <div class="weblogo">
+      <img src="/img/weblogo.png" alt="" style="width: 10%; height: 2%; object-fit: cover;" onclick="home()">
+    </div>
+    <div class="drop" style="margin-left: 20%;">
+
+      <div class="dropdown">
+        <button class="dropbtn">Electronics</button>
         <div class="dropdown-content">
           <a href="/item?Category=laptop">Laptop</a>
           <a href="/item?Category=mobile">Mobile</a>
@@ -776,10 +840,10 @@ footer .bottom .links a{
         <div class="dropdown-content">
           <a href="/item?Category=men">Men</a>
           <a href="/item?Category=women">Women</a>
-          <a href="/item?Category=kid">Kid</a>
+          <a href="/item?Category=kids">Kid</a>
         </div>
       </div>
-      
+
       <div class="dropdown">
         <button class="dropbtn">Accessories</button>
         <div class="dropdown-content">
@@ -789,7 +853,7 @@ footer .bottom .links a{
           <a href="/item?Category=necklace">Necklace</a>
         </div>
       </div>
-      
+
       <div class="dropdown">
         <button class="dropbtn">Home Decor</button>
         <div class="dropdown-content">
@@ -799,61 +863,82 @@ footer .bottom .links a{
         </div>
       </div>
 
-    <div class="dropdown">
+      <div class="dropdown">
         <button class="dropbtn">Kitchen</button>
         <div class="dropdown-content">
           <a href="/item?Category=utensils">Utensils</a>
           <a href="/item?Category=cookware">Cookware</a>
           <a href="/item?Category=appliances">Appliances</a>
         </div>
+      </div>
     </div>
 
     <div class="search-container">
-        <input type="text" placeholder="Search..." class="search-bar" id="searchBar">
+      <input type="text" placeholder="Search..." class="search-bar" id="searchBar">
+      <div class="search-img">
+        <img src="/img/search.png" alt="" onclick="search()">
+        <img src="img/mic.png" alt="">
+      </div>
+    </div>
+
+    <div class="wishlist">
+      <img src="img/add-to-favorites.png" alt="wishlist" id="clickableImage" onclick="goto('wishlist')">
+    </div>
+
+    <div class="cart">
+      <img src="img/add-to-basket.png" alt="cart" id="clickableImage2" onclick="goto('order')">
     </div>
 
     <div class="user-logo">
-      <img src="img/logo.jpg" alt="User Logo" width="30" height="30">
+      <img src="/img/logo.png" alt="User Logo">
       <div class="menu-content">
-        <a href="/account">My Account</a>
-        <a href="#order.html">My Order</a>
-        <a href="#wishlist.html">My Wishlist</a>
+        <a onclick="account()" style="cursor: pointer;">My Account</a>
+        <a href="/order">My Order</a>
+        <a href="/wishlist">My Wishlist</a>
         <a href="#contactus">Contact Us</a>
         <a href="/login">Log Out</a>
       </div>
     </div>
-</nav>
+
+  </nav>
 
 
-    <div class="ad">
-      <img src="img\banner.png" alt="BrandAd" >
-    </div>
+  <div class="ad">
+    <img src="img\banner.png" alt="BrandAd">
+  </div>
 
 
 
   <section class="grid-container" id="grid-container">
-      <div class="grid">
-        <div class="grid-item">Box 1</div>
-      <div class="grid-item">Box 2</div>
-      <div class="grid-item">Box 3</div>
-      <div class="grid-item">Box 4</div>
-      </div>
+    <h3 style="margin-left: 50%; width: 100%;">Todays Top Deal</h3>
+    <div class="grid">
+      <img src="https://i5.walmartimages.com/asr/a9477e21-e040-4403-8118-a5349e1a61a1.2971dd7f4bb21a6060dd69a886473ec2.png?odnHeight=640&odnWidth=640&odnBg=FFFFFF" alt="" class="grid-item" style="padding: 0%;">
+      <img src="https://assets.nikshanonline.com/wp-content/uploads/2024/01/Hawkins-5-Litre-Ceramic-Nonstick-Pressure-Cooker-Induction-Inner-Lid-Cooker-Granite-Contura-shaped-Cooker-Best-Cooker-ICC50-1.png" alt="" class="grid-item" style="padding: 0%;">
+      <img src="https://d2xamzlzrdbdbn.cloudfront.net/products/21cb54a8-f056-4970-8fb3-f9882354c26823031156.jpg" alt="" class="grid-item" style="padding: 0%;">
+      <img src="https://www.getgear.in/cdn/shop/files/02_google-pixel-2-bay-device-3qt_1728x.png?v=1697007636" alt="" class="grid-item" style="padding: 0%;">
+    </div>
   </section>
-
   
-  <section class="category-grid" id="category-grid">
-    <h3>Shop by Category</h3>
-    <div class="grid-row">
-      <div class="gridItem">Category 1</div>
-      <div class="gridItem">Category 2</div>
-      <div class="gridItem">Category 3</div>
-    </div>
-    <div class="grid-row">
-      <div class="gridItem">Category 4</div>
-      <div class="gridItem">Category 5</div>
-      <div class="gridItem">Category 6</div>          
-    </div>
-  </section>
+  
+  <div class="section_banner" style="display: flex;">
+    <section class="category-grid" id="category-grid" >
+      <h3>Shop by Category</h3>
+      <div class="grid-row">
+        <img onclick="item('men')" src="https://assets.myntassets.com/dpr_1.5,q_60,w_400,c_limit,fl_progressive/assets/images/10673544/2019/9/24/6b9c7688-7ca2-4d11-9e5b-a3745ecd8f761569310358973-The-Indian-Garage-Co-Men-Shirts-8481569310357131-1.jpg" alt="" class="gridItem" style="padding: 0% 5% 0% 5%;">
+        <img onclick="item('kids')" src="https://5.imimg.com/data5/OY/JA/LJ/SELLER-101478874/kids-cloth-500x500.jpg" alt="" class="gridItem" style="padding: 0%;">
+        <img onclick="item('women')" src="https://www.pngkey.com/png/detail/114-1146632_summer-clothes-for-women-png-image-background-sleeveless.png" alt="" class="gridItem" style="padding: 0% ">
+      </div>
+      <div class="grid-row">
+        <img onclick="item('earphones')" src="https://www.onbeli.com/cdn/shop/collections/earphones-onbeli.jpg?v=1657265528" alt="" class="gridItem" style="padding: 0%;">
+        <img onclick="item('watch')" src="https://clipart-library.com/new_gallery/172-1723139_woman-watch-png-transparent-background-watches-png.png" alt="" class="gridItem" style="padding: 0%;">
+        <img onclick="item('earphones')" src="https://i5.walmartimages.com/asr/a9477e21-e040-4403-8118-a5349e1a61a1.2971dd7f4bb21a6060dd69a886473ec2.png?odnHeight=640&odnWidth=640&odnBg=FFFFFF" alt="" class="gridItem" style="padding: 0% 3% 0 3%; background-color: #f6f6f6;">
+      </div>
+    </section>
+  
+    <section class="ondc-banner" id="category-grid" style=" margin-right: 10%; margin-top: 27%;">
+      <img src="https://www.indiaretailing.com/wp-content/uploads/2023/12/GAeyCUNWsAA8LXd-e1701691748625.png" alt="">
+    </section>
+  </div>
 
 
   <section id="tranding">
@@ -867,13 +952,13 @@ footer .bottom .links a{
           <!-- Slide-start -->
           <div class="swiper-slide tranding-slide">
             <div class="tranding-slide-img">
-              <img src="img/tranding-food-1.png" alt="Tranding">
+              <img src="https://assets.myntassets.com/dpr_1.5,q_60,w_400,c_limit,fl_progressive/assets/images/25619054/2023/10/25/0f113769-7322-4dc9-bd6a-d41316e43e661698235964594MaseratiMenBlueDialBlueStainlessSteelStrapsAnalogueWatchR8871.jpg" alt="Tranding">
             </div>
             <div class="tranding-slide-content">
-              <h1 class="food-price">$20</h1>
+              <h1 class="food-price">5,000</h1>
               <div class="tranding-slide-content-bottom">
                 <h2 class="food-name">
-                  Special Pizza
+                  Titan watch
                 </h2>
                 <h3 class="food-rating">
                   <span>4.5</span>
@@ -892,13 +977,13 @@ footer .bottom .links a{
           <!-- Slide-start -->
           <div class="swiper-slide tranding-slide">
             <div class="tranding-slide-img">
-              <img src="img/tranding-food-2.png" alt="Tranding">
+              <img src="https://www.parivarceremony.com/media/catalog/product/cache/14a1553305c404c221b3f13f50c007dd/p/1/p1044mw22_1.jpg" alt="Tranding">
             </div>
             <div class="tranding-slide-content">
-              <h1 class="food-price">$20</h1>
+              <h1 class="food-price">8,990</h1>
               <div class="tranding-slide-content-bottom">
                 <h2 class="food-name">
-                  Meat Ball
+                  mens blue suit
                 </h2>
                 <h3 class="food-rating">
                   <span>4.5</span>
@@ -917,13 +1002,13 @@ footer .bottom .links a{
           <!-- Slide-start -->
           <div class="swiper-slide tranding-slide">
             <div class="tranding-slide-img">
-              <img src="img/tranding-food-3.png" alt="Tranding">
+              <img src="data:image/jpeg;base64,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" alt="Tranding">
             </div>
             <div class="tranding-slide-content">
-              <h1 class="food-price">$40</h1>
+              <h1 class="food-price">2,490</h1>
               <div class="tranding-slide-content-bottom">
                 <h2 class="food-name">
-                  Burger
+                  red female grown
                 </h2>
                 <h3 class="food-rating">
                   <span>4.5</span>
@@ -942,13 +1027,13 @@ footer .bottom .links a{
           <!-- Slide-start -->
           <div class="swiper-slide tranding-slide">
             <div class="tranding-slide-img">
-              <img src="img/tranding-food-4.png" alt="Tranding">
+              <img src="https://media-ik.croma.com/prod/https://media.croma.com/image/upload/v1697625540/Croma%20Assets/Entertainment/Headphones%20and%20Earphones/Images/271045_txjjn7.png" alt="Tranding">
             </div>
             <div class="tranding-slide-content">
-              <h1 class="food-price">$15</h1>
+              <h1 class="food-price">1,499</h1>
               <div class="tranding-slide-content-bottom">
                 <h2 class="food-name">
-                  Frish Curry
+                  headphones
                 </h2>
                 <h3 class="food-rating">
                   <span>4.5</span>
@@ -967,13 +1052,13 @@ footer .bottom .links a{
           <!-- Slide-start -->
           <div class="swiper-slide tranding-slide">
             <div class="tranding-slide-img">
-              <img src="img/tranding-food-5.png" alt="Tranding">
+              <img src="https://cdn.tmobile.com/content/dam/t-mobile/en-p/cell-phones/apple/Apple-iPhone-14-Pro-Max/Space-Black/Apple-iPhone-14-Pro-Max-Space-Black-thumbnail.png" alt="Tranding">
             </div>
             <div class="tranding-slide-content">
-              <h1 class="food-price">$15</h1>
+              <h1 class="food-price">55,000</h1>
               <div class="tranding-slide-content-bottom">
                 <h2 class="food-name">
-                  Pane Cake
+                  i phone 12 
                 </h2>
                 <h3 class="food-rating">
                   <span>4.5</span>
@@ -992,13 +1077,13 @@ footer .bottom .links a{
           <!-- Slide-start -->
           <div class="swiper-slide tranding-slide">
             <div class="tranding-slide-img">
-              <img src="img/tranding-food-6.png" alt="Tranding">
+              <img src="https://assets.ajio.com/medias/sys_master/root/20230728/6rpn/64c3b749eebac147fc91f85c/-473Wx593H-461592364-gold-MODEL4.jpg" alt="Tranding">
             </div>
             <div class="tranding-slide-content">
-              <h1 class="food-price">$20</h1>
+              <h1 class="food-price">1,12,000</h1>
               <div class="tranding-slide-content-bottom">
                 <h2 class="food-name">
-                  Vanilla cake
+                  golder necklace
                 </h2>
                 <h3 class="food-rating">
                   <span>4.5</span>
@@ -1017,13 +1102,13 @@ footer .bottom .links a{
           <!-- Slide-start -->
           <div class="swiper-slide tranding-slide">
             <div class="tranding-slide-img">
-              <img src="img/tranding-food-7.png" alt="Tranding">
+              <img src="https://5.imimg.com/data5/SELLER/Default/2022/5/KB/DU/MR/152198246/small-kids-clothes.jpg" alt="Tranding">
             </div>
             <div class="tranding-slide-content">
-              <h1 class="food-price">$8</h1>
+              <h1 class="food-price">799</h1>
               <div class="tranding-slide-content-bottom">
                 <h2 class="food-name">
-                  Straw Cake
+                  kids t shirt
                 </h2>
                 <h3 class="food-rating">
                   <span>4.5</span>
@@ -1041,13 +1126,13 @@ footer .bottom .links a{
           <!-- Slide-end --> <!-- Slide-start -->
           <div class="swiper-slide tranding-slide">
             <div class="tranding-slide-img">
-              <img src="img/tranding-food-1.png" alt="Tranding">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDseBkhgY1zDntqsLjfSL6hYzmxVFhKBT_sg&usqp=CAU" alt="Tranding">
             </div>
             <div class="tranding-slide-content">
-              <h1 class="food-price">$20</h1>
+              <h1 class="food-price">499</h1>
               <div class="tranding-slide-content-bottom">
                 <h2 class="food-name">
-                  Special Pizza
+                  new black headphones
                 </h2>
                 <h3 class="food-rating">
                   <span>4.5</span>
@@ -1066,13 +1151,13 @@ footer .bottom .links a{
           <!-- Slide-start -->
           <div class="swiper-slide tranding-slide">
             <div class="tranding-slide-img">
-              <img src="img/tranding-food-2.png" alt="Tranding">
+              <img src="https://www.godigit.com/content/dam/godigit/directportal/en/contenthm/samsung-galaxy-s23-plus-5g-mobiles.jpg" alt="Tranding">
             </div>
             <div class="tranding-slide-content">
-              <h1 class="food-price">$20</h1>
+              <h1 class="food-price">13,999</h1>
               <div class="tranding-slide-content-bottom">
                 <h2 class="food-name">
-                  Meat Ball
+                  samsung
                 </h2>
                 <h3 class="food-rating">
                   <span>4.5</span>
@@ -1091,13 +1176,13 @@ footer .bottom .links a{
           <!-- Slide-start -->
           <div class="swiper-slide tranding-slide">
             <div class="tranding-slide-img">
-              <img src="img/tranding-food-3.png" alt="Tranding">
+              <img src="https://rukminim1.flixcart.com/image/714/857/k3ahbww0/dress/c/g/4/l-gn2013-l-dev-fashion-original-imafgnnhm4zkqwcz.jpeg?q=50" alt="Tranding">
             </div>
             <div class="tranding-slide-content">
-              <h1 class="food-price">$40</h1>
+              <h1 class="food-price">1,200</h1>
               <div class="tranding-slide-content-bottom">
                 <h2 class="food-name">
-                  Burger
+                  purple dress
                 </h2>
                 <h3 class="food-rating">
                   <span>4.5</span>
@@ -1116,13 +1201,13 @@ footer .bottom .links a{
           <!-- Slide-start -->
           <div class="swiper-slide tranding-slide">
             <div class="tranding-slide-img">
-              <img src="img/tranding-food-4.png" alt="Tranding">
+              <img src="https://i.gadgets360cdn.com/products/large/sony-ps5-649x800-1592631239.jpeg" alt="Tranding">
             </div>
             <div class="tranding-slide-content">
-              <h1 class="food-price">$15</h1>
+              <h1 class="food-price">35,000</h1>
               <div class="tranding-slide-content-bottom">
                 <h2 class="food-name">
-                  Frish Curry
+                  PS 5
                 </h2>
                 <h3 class="food-rating">
                   <span>4.5</span>
@@ -1141,13 +1226,13 @@ footer .bottom .links a{
           <!-- Slide-start -->
           <div class="swiper-slide tranding-slide">
             <div class="tranding-slide-img">
-              <img src="img/tranding-food-5.png" alt="Tranding">
+              <img src="https://img.etimg.com/thumb/msid-53332726,width-640,height-480,imgsize-115173,resizemode-4/7-worthy-laptops-priced-above-rs-1-lakh.jpg" alt="Tranding">
             </div>
             <div class="tranding-slide-content">
-              <h1 class="food-price">$15</h1>
+              <h1 class="food-price">65,000</h1>
               <div class="tranding-slide-content-bottom">
                 <h2 class="food-name">
-                  Pane Cake
+                  Asus notebook
                 </h2>
                 <h3 class="food-rating">
                   <span>4.5</span>
@@ -1166,13 +1251,13 @@ footer .bottom .links a{
           <!-- Slide-start -->
           <div class="swiper-slide tranding-slide">
             <div class="tranding-slide-img">
-              <img src="img/tranding-food-6.png" alt="Tranding">
+              <img src="https://images.bestsellerclothing.in/data/selected/10-jan-2024/118607303_1.jpg?width=415&height=550&mode=fill&fill=blur&format=auto" alt="Tranding">
             </div>
             <div class="tranding-slide-content">
-              <h1 class="food-price">$20</h1>
+              <h1 class="food-price">1,300</h1>
               <div class="tranding-slide-content-bottom">
                 <h2 class="food-name">
-                  Vanilla cake
+                  mens formal
                 </h2>
                 <h3 class="food-rating">
                   <span>4.5</span>
@@ -1207,16 +1292,16 @@ footer .bottom .links a{
   <footer>
     <div class="top">
       <div class="social-links">
-        <a href="#"><i class='bx bxl-instagram' ></i></a>
-        <a href="#"><i class='bx bxl-linkedin' ></i></a>
+        <a href="#"><i class='bx bxl-instagram'></i></a>
+        <a href="#"><i class='bx bxl-linkedin'></i></a>
       </div>
     </div>
     <div class="separator"></div>
-        <div class="bottom">
-            <p>
-                Made With ❤️ By Team DYVH
-            </p>
-        </div>
+    <div class="bottom">
+      <p>
+        Made With ❤️ By Team DYVH
+      </p>
+    </div>
   </footer>
 
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
@@ -1228,56 +1313,56 @@ footer .bottom .links a{
       var dropdownToggles = document.querySelectorAll('.dropdown-toggle');
 
       dropdownToggles.forEach(function (toggle) {
-          toggle.addEventListener('click', function () {
-              this.querySelector('.dropdown-menu').classList.toggle('show');
-              });
-          });
+        toggle.addEventListener('click', function () {
+          this.querySelector('.dropdown-menu').classList.toggle('show');
+        });
+      });
     });
 
 
-document.querySelector('.user-logo').addEventListener('click', function () {
-  document.querySelector('.menu-content').style.display = 'block';
-});
+    document.querySelector('.user-logo').addEventListener('click', function () {
+      document.querySelector('.menu-content').style.display = 'block';
+    });
 
-// If you want to handle the outside click to close the menu
-document.addEventListener('click', function (event) {
-  if (!event.target.closest('.user-logo')) {
-    document.querySelector('.menu-content').style.display = 'none';
-  }
-});
+    // If you want to handle the outside click to close the menu
+    document.addEventListener('click', function (event) {
+      if (!event.target.closest('.user-logo')) {
+        document.querySelector('.menu-content').style.display = 'none';
+      }
+    });
 
 
-var TrandingSlider = new Swiper('.tranding-slider', {
-  effect: 'coverflow',
-  grabCursor: true,
-  centeredSlides: true,
-  loop: true,
-  slidesPerView: 'auto',
-  coverflowEffect: {
-    rotate: 0,
-    stretch: 0,
-    depth: 100,
-    modifier: 2.5,
-  },
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-  autoplay: {
-    delay: 1400, 
-    disableOnInteraction: false,
-  },
-});
+    var TrandingSlider = new Swiper('.tranding-slider', {
+      effect: 'coverflow',
+      grabCursor: true,
+      centeredSlides: true,
+      loop: true,
+      slidesPerView: 'auto',
+      coverflowEffect: {
+        rotate: 0,
+        stretch: 0,
+        depth: 100,
+        modifier: 2.5,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      autoplay: {
+        delay: 1400,
+        disableOnInteraction: false,
+      },
+    });
 
-const searchPlaceholder = document.getElementById('searchBar');
+    const searchPlaceholder = document.getElementById('searchBar');
     const placeholderTexts = ['Electronics...', 'Fashion...', 'Home Decor...', 'Kitchen...', 'Accessories...'];
     let textIndex = 0;
     let charIndex = 0;
-    let typingSpeed = 100; 
+    let typingSpeed = 100;
 
 
     function typeText() {
@@ -1291,31 +1376,53 @@ const searchPlaceholder = document.getElementById('searchBar');
         setTimeout(typeText, typingSpeed * 15);
       }
     }
-    
+
     typeText();
 
 
-  function robot() {
-    const robot = document.getElementById('robot')
-    const bot = document.getElementById('bot')
-    const cross = document.getElementById('cross')
+    function robot() {
+      const robot = document.getElementById('robot')
+      const bot = document.getElementById('bot')
+      const cross = document.getElementById('cross')
 
-    if(bot.style.display=='none'){
-      bot.style.display='block';
-      robot.style.display='none';
-      cross.style.display='block';
+      if (bot.style.display == 'none') {
+        bot.style.display = 'block';
+        robot.style.display = 'none';
+        cross.style.display = 'block';
+      }
+      else {
+        cross.style.display = 'none';
+        bot.style.display = 'none';
+        robot.style.display = 'block';
+
+      }
     }
-    else{
-      cross.style.display='none';
-      bot.style.display='none';
-      robot.style.display='block';
+
+    function item(loc) {
+      window.location.href = `/item/?Category=${loc}`
+    }
+
+    function goto(loc) {
+      window.location.href = `/${loc}`;
+    }
+
+    function home() {
+      window.location.href = "/";
+    }
+
+    function account() {
+      window.location.href = `/account?${localStorage.getItem('id')}`
+    }
+
+    function search() {
+
+      window.location.href = `/item?productname=${searchPlaceholder.value}`
 
     }
-}
 
 
-  
   </script>
 
 </body>
+
 </html>
