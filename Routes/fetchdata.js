@@ -2,11 +2,6 @@ var express = require('express');
 var database = require('../model/logindata');
 var profile = require('../model/profile');
 
-if (typeof localStorage === "undefined" || localStorage === null) {
-    var LocalStorage = require('node-localstorage').LocalStorage;
-    localStorage = new LocalStorage('./scratch');
-}
-  
   
 
 var router = express.Router();
