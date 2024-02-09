@@ -81,6 +81,7 @@
             width: 768px;
             max-width: 100%;
             min-height: 480px;
+            margin-bottom: 8%;
         }
 
         .container p {
@@ -402,10 +403,72 @@
             font-size: 18px;
             cursor: pointer;
         }
+
+        footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 15%;
+            /* padding: 55px; */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            background-color: hsla(200, 56%, 13%, 0.592);
+            margin-top: -12%;
+        }
+
+        footer .top,
+        footer .bottom {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+        }
+
+        footer .top .social-links {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            gap: 15px;
+            font-size: 22px;
+        }
+
+        footer .separator {
+            width: 100%;
+            height: 1px;
+            background-color: hsla(200, 56%, 13%, 0.592);
+            margin: 30px 0 20px;
+        }
+
+        footer .bottom p {
+            font-size: 14px;
+        }
+
+        footer .bottom .links a {
+            font-size: 12px;
+            margin-left: 14px;
+        }
     </style>
     <div id="message-box" class="hidden">
         <p class="message"></p>
         <button type="button" class="close">x</button>
+    </div>
+    <div class="logo">
+        <img src="/img/makeinindia.jpg" alt="" style="position: absolute; left: 10px; top: 10px; height: 60px;">
+        <img src="/img/download-removebg-preview.png" alt=""
+            style="position: absolute; right: 20px; top: 10px; height: 50px;">
     </div>
     <div class="container" id="container">
         <div class="form-container sign-up">
@@ -450,10 +513,27 @@
             </div>
         </div>
     </div>
+    <footer>
+        <div class="top">
+            <div class="social-links">
+                <a href="#"><i class='bx bxl-instagram'></i></a>
+                <a href="#"><i class='bx bxl-linkedin'></i></a>
+            </div>
+        </div>
+        <div class="separator"></div>
+        <div class="bottom">
+            <p>
+                Made With ❤️ By Team DYVH
+            </p>
+        </div>
+    </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
 
 
     <script type="text/javascript">
+
+        localStorage.setItem('id', " ");
 
         var error = '<%= exist %>';
         function showMessage(message) {
@@ -502,7 +582,7 @@
         //const darkmode = new Darkmode(options);
         // darkmode.showWidget();
 
-        
+
     </script>
     <script src="auth.js" defer type="module"></script>
 </body>

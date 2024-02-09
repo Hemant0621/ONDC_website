@@ -37,7 +37,6 @@ module.exports={
         });
 
 
-
         var datavalue = await data.find(criteria);
         res.render('item',{products:datavalue});
       })

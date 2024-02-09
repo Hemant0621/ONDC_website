@@ -683,7 +683,7 @@
         .bot {
             position: fixed;
             z-index: 10;
-            left: 76%;
+            left: 73.5%;
             bottom: 2%;
         }
 
@@ -717,6 +717,35 @@
             height: 600px;
             margin: 0, auto;
             border: 2px solid black;
+        }
+
+        #ar {
+            display: none;
+            background-color: #ddd;
+            position: absolute;
+            z-index: 30;
+            height: 450px;
+            width: 400px;
+            text-align: center;
+        }
+
+        #qr {
+            margin: 5% 10% 0% 10%;
+            height: 70%;
+            width: 80%;
+
+        }
+
+        #ar:focus {
+            display: none;
+        }
+
+        #arcross {
+            position: absolute;
+            cursor: pointer;
+            margin-left: 5%;
+            right: 0px;
+            height: 30px;
         }
     </style>
 
@@ -808,6 +837,14 @@
     </nav>
 
     <div class="container">
+        <div id="ar">
+            <% if (products.ar) { %>
+                <img id="qr" src="https://lh3.googleusercontent.com/d/1aaOUvvWJppqXBalj9UsvoDl1MfeQV3sA=w1000?authuser=0"
+                    alt="">
+                <% } %>
+                    <img id="arcross" src="/img/delete-button.png" alt="" onclick="ar()">
+                    <h2>Scan to view AR in your mobile</h2>
+        </div>
         <div class="mainImage" id="box" style="display: none ; position: relative; bottom: 145px;">
             <model-viewer src="<%= products.model_path %>" camera-controls auto-rotate></model-viewer>
         </div>
@@ -846,9 +883,16 @@
             <div class="buy-now-btn" onclick="buyNow()">
                 <img src="/img/buy.png" alt="buy">
             </div>
-            <div class="_360" onclick="model()" style="cursor: pointer;">
-                <img src="/img/360-degrees.png" alt="">
-            </div>
+            <% if (products.model_path) { %>
+                <div class="_360" onclick="model()" style="cursor: pointer;">
+                    <img src="/img/360-degrees.png" alt="">
+                </div>
+            <% } %>
+            <% if (products.ar) { %>
+                <div class="_360" onclick="ar()" style="cursor: pointer; position: relative; left: 15%; bottom: 3%;">
+                    <img src="/img/vr-goggles.png" alt="">
+                </div>
+                <% } %>
 
         </div>
     </div>
@@ -923,25 +967,29 @@
                 <p class="comment">keep it up</p>
             </div>
         </div>
-        <div class="similar-products" >
+        <div class="similar-products">
             <h2>Similar Products</h2>
 
             <div class="product">
-                <img src="https://5.imimg.com/data5/SELLER/Default/2022/5/KB/DU/MR/152198246/small-kids-clothes.jpg" alt="Similar Product 1">
+                <img src="https://5.imimg.com/data5/SELLER/Default/2022/5/KB/DU/MR/152198246/small-kids-clothes.jpg"
+                    alt="Similar Product 1">
                 <h3>kids dress</h3>
                 <p class="price">Rs. 699</p>
                 <button class="add-to-cart-btn">Add to Cart</button>
             </div>
 
             <div class="product">
-                <img style="margin-top: 10%;" src="https://img.etimg.com/thumb/msid-53332726,width-640,height-480,imgsize-115173,resizemode-4/7-worthy-laptops-priced-above-rs-1-lakh.jpg" alt="Similar Product 2">
+                <img style="margin-top: 10%;"
+                    src="https://img.etimg.com/thumb/msid-53332726,width-640,height-480,imgsize-115173,resizemode-4/7-worthy-laptops-priced-above-rs-1-lakh.jpg"
+                    alt="Similar Product 2">
                 <h3>Asus notebook</h3>
                 <p class="price">Rs. 65,000</p>
                 <button class="add-to-cart-btn">Add to Cart</button>
             </div>
 
             <div class="product">
-                <img src="https://assets.ajio.com/medias/sys_master/root/20230728/6rpn/64c3b749eebac147fc91f85c/-473Wx593H-461592364-gold-MODEL4.jpg" alt="Similar Product 3">
+                <img src="https://assets.ajio.com/medias/sys_master/root/20230728/6rpn/64c3b749eebac147fc91f85c/-473Wx593H-461592364-gold-MODEL4.jpg"
+                    alt="Similar Product 3">
                 <h3>golder jwellery</h3>
                 <p class="price">Rs. 1,12,000</p>
                 <button class="add-to-cart-btn">Add to Cart</button>
@@ -1069,6 +1117,16 @@
                 bot.style.display = 'none';
                 robot.style.display = 'block';
 
+            }
+        }
+
+        function ar() {
+            var display =   document.getElementById("ar").style.display 
+            if(display=='none'){
+                document.getElementById("ar").style.display = 'block';
+            }
+            else{
+                document.getElementById("ar").style.display = 'none';
             }
         }
 
