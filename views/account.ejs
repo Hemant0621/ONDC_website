@@ -39,7 +39,7 @@
 
     nav {
       background-color: hsla(200, 56%, 13%, 0.592);
-      height: 100px;
+      height: 70px;
     }
 
     nav a {
@@ -47,7 +47,7 @@
       display: block;
       color: hsla(200, 56%, 13%, 0.592);
       text-align: center;
-      padding: 14px 16px;
+      padding: 12px 16px;
       text-decoration: none;
       -webkit-transition: background-color 0.3s ease, color 0.3s ease;
       -o-transition: background-color 0.3s ease, color 0.3s ease;
@@ -64,7 +64,7 @@
       overflow: hidden;
       margin-left: -10%;
       margin-right: 10%;
-      margin-bottom: -2%;
+      /* margin-bottom: -2%; */
     }
 
     .dropbtn {
@@ -73,7 +73,7 @@
       outline: none;
       color: white;
       /********************* OPINION ***********************/
-      padding: 14px 16px;
+      /* padding: 14px 16px; */
       background-color: inherit;
       font-family: inherit;
       margin: 0;
@@ -117,8 +117,8 @@
 
     .search-container {
       float: left;
-      margin-top: 8px;
-      margin-left: 10%;
+      margin-top: -0.5%;
+      margin-left: 9%;
       font-size: 18px;
       border-radius: 10px;
       -webkit-transition: background-color 0.3s ease;
@@ -389,7 +389,7 @@
 
 
     .profile-info {
-      margin-top: -35%;
+      margin-top: -25%;
       margin-left: 10%;
     }
 
@@ -403,6 +403,7 @@
 
 
     #user-image {
+      object-fit: fill;
       width: 25%;
       height: 25%;
       border-radius: 50%;
@@ -484,6 +485,7 @@
       background-color: #ffffff;
       margin-top: -22px;
       margin-left: 175px;
+      width: 50%;
     }
 
 
@@ -623,11 +625,11 @@
     </div>
 
     <div class="wishlist">
-      <img src="/img/add-to-favorites.png" alt="wishlist" id="clickableImage">
+      <img src="/img/add-to-favorites.png" alt="wishlist" id="clickableImage" onclick="goto('wishlist')">
     </div>
 
     <div class="cart">
-      <img src="/img/add-to-basket.png" alt="cart" id="clickableImage2">
+      <img src="/img/add-to-basket.png" alt="cart" id="clickableImage2" onclick="goto('order')">
     </div>
 
     <div class="user-logo">
@@ -644,7 +646,7 @@
   </nav>
 
   <div class="container">
-    <h2><a href="account.html"></a>My Account</h2>
+    <h2><a href="/account"></a>My Account</h2>
     <h4>Divyansh Rai</h4>
     <div class="vertical-line"></div>
     <div class="horizontal-line"></div>
@@ -669,7 +671,7 @@
     <h2>My Profile</h2>
     <div class="profile-info">
       <div id="user-image-container">
-        <img src="/img/batman2.png" alt="User Image" id="user-image">
+        <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D" alt="User Image" id="user-image">
         <div id="edit-image" onclick="editImage()">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
             stroke-linecap="round" stroke-linejoin="round">
@@ -719,7 +721,7 @@
     <div class="separator"></div>
     <div class="bottom">
       <p>
-        Made With ❤️ By Team DYVH
+        Made With ❤ By Team DYVH
       </p>
     </div>
   </footer>
@@ -821,24 +823,6 @@
 <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 
 <script>
-  // Get the image element by its ID
-  var clickableImage = document.getElementById("clickableImage");
-
-  // Add a click event listener to the image
-  clickableImage.addEventListener("click", function () {
-    // Redirect to the next page when the image is clicked
-    window.location.href = "wishlist.html";
-  });
-</script>
-<script>
-  // Get the image element by its ID
-  var clickableImage = document.getElementById("clickableImage2");
-
-  // Add a click event listener to the image
-  clickableImage.addEventListener("click", function () {
-    // Redirect to the next page when the image is clicked
-    window.location.href = "order.html";
-  });
 
   function home() {
     window.location.href = "/";
@@ -846,6 +830,10 @@
 
   function account() {
       window.location.href = `/account?${localStorage.getItem('id')}`
+    }
+
+    function goto(loc) {
+      window.location.href = `/${loc}`;
     }
 
 
