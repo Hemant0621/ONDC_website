@@ -14,7 +14,8 @@ const garmentsSchema = new mongoose.Schema({
     img1:String,
     img2:String,
     img3:String,
-    model_path:String
+    model_path:String,
+    ar:String
 })
 
 var con = mongoose.connection;
