@@ -4,7 +4,7 @@
 
 ## Problem Statement
 In the realm of online shopping, bridging the gap between the convenience of digital transactions and the tactile experience of physical stores remains a significant challenge. Customers often struggle to make informed decisions without the ability to "look & feel" products before purchasing, leading to uncertainty and distrust in online marketplaces. This challenge is particularly pronounced in regions like India, where shoppers heavily rely on physical shopping experiences and personal interactions with shopping assistants to build trust in their purchases and the sellers.
-Moreover, non-tech savvy users encounter additional difficulties navigating through complex online interfaces, further exacerbating the issue of trust and usability.
+Moreover, non-tech savvy users encounter additional difficulties navigating through complex online interfaces, further exacerbating the issue of trust and usability. 
 
 ## Solution Overview
 To address these challenges, our solution offers a conversational interface that guides non-tech savvy buyers through the online shopping experience while providing an immersive feel akin to real-world shopping. Leveraging natural language processing and intuitive interfaces, our web application empowers users to interact seamlessly, mimicking the personalized assistance they would receive in physical stores.
