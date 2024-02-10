@@ -20,17 +20,17 @@ To address these challenges, our solution offers a conversational interface that
 - **Authentication**: Firebase for Google login authentication, ensuring secure access to the platform.
 
 ## Key Features
-•	Conversational Interface: Our platform offers a natural language-based interaction model, allowing users to converse with the system as they would with a shopping assistant.
-•	360° and AR View: Users can explore products from every angle with our 360° view feature, providing a more comprehensive understanding of the product. Additionally, augmented reality (AR) technology allows users to visualize how products will look and fit in their real-world environment, enhancing their purchasing confidence.
-•	Immersive Experience: Through carefully crafted UI/UX design and intuitive navigation, users can experience a sense of immersion akin to physical shopping, enhancing their confidence in online purchases.
-•	Guided Assistance: Non-tech savvy users are provided with step-by-step guidance throughout the shopping journey, ensuring they can navigate the platform effortlessly and make informed decisions.
+•	Conversational Interface: Our platform offers a natural language-based interaction model, allowing users to converse with the system as they would with a shopping assistant.  
+•	360° and AR View: Users can explore products from every angle with our 360° view feature, providing a more comprehensive understanding of the product. Additionally, augmented reality (AR) technology allows users to visualize how products will look and fit in their real-world environment, enhancing their purchasing confidence.  
+•	Immersive Experience: Through carefully crafted UI/UX design and intuitive navigation, users can experience a sense of immersion akin to physical shopping, enhancing their confidence in online purchases.  
+•	Guided Assistance: Non-tech savvy users are provided with step-by-step guidance throughout the shopping journey, ensuring they can navigate the platform effortlessly and make informed decisions.  
 •	Personalization: By leveraging user data and preferences, our platform tailor recommendations and product suggestions, enhancing the overall shopping experience.
 
 ## Benefits for Non-Tech Savvy Users
-•	Simplified Navigation: Our conversational interface eliminates the need for complex navigation menus, making it easier for non-tech savvy individuals to browse and purchase products online.
+•	Simplified Navigation: Our conversational interface eliminates the need for complex navigation menus, making it easier for non-tech savvy individuals to browse and purchase products online.  
 •	Personalized Assistance: Users receive personalized recommendations and assistance, mirroring the support they would expect from in-store shopping assistants, thereby building trust and confidence in their purchases.
-•	Intuitive Design: The platform's user-friendly design ensures that even those with limited technological proficiency can engage effortlessly, fostering inclusivity and accessibility.
-•	Enhanced Visualization: 360° view and AR technology provide non-tech savvy users with enhanced visualization capabilities, allowing them to better assess products and make informed purchase decisions with confidence.
+•	Intuitive Design: The platform's user-friendly design ensures that even those with limited technological proficiency can engage effortlessly, fostering inclusivity and accessibility.  
+•	Enhanced Visualization: 360° view and AR technology provide non-tech savvy users with enhanced visualization capabilities, allowing them to better assess products and make informed purchase decisions with confidence.  
 
 ## Conclusion
 Our web application offers a compelling solution to the challenges faced by non-tech savvy users in the realm of online shopping. By combining intuitive design, conversational interfaces, and personalized assistance, we aim to bridge the gap between the digital and physical shopping experiences, empowering users to shop with confidence and convenience from the comfort of their homes.
