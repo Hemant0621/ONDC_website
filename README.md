@@ -11,7 +11,7 @@ To address these challenges, our solution offers a conversational interface that
 
 ![Picture1](https://github.com/Hemant0621/ONDC_website/assets/113722329/0a7ad104-17f5-491b-89fe-4b6b7a22cb2d)
 ![Picture2](https://github.com/Hemant0621/ONDC_website/assets/113722329/cbfe2e8c-67f0-47c9-a473-6c6c310cae39)
-https://github.com/Hemant0621/ONDC_website/assets/113722329/6538729f-b803-4b9c-8e79-ad47275bdf71
+<video src='https://github.com/Hemant0621/ONDC_website/assets/113722329/6538729f-b803-4b9c-8e79-ad47275bdf71' width=180/>
 
 ## Technology Stack
 - **Frontend**: EJS (Embedded JavaScript) for dynamic web page generation.
